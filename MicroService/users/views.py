@@ -59,7 +59,6 @@ class UserViewSet(viewsets.ModelViewSet):
     def get_token(self, request):
         serializer = UserTokenSerializer(data=request.data)
         if serializer.is_valid():
-            print("123")
             username = serializer.validated_data['username']
             password = serializer.validated_data['password']
             print(username, password)
